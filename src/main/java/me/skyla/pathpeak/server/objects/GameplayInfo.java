@@ -8,36 +8,33 @@ package me.skyla.pathpeak.server.objects;
 public class GameplayInfo {
 
     private final Gamemode gamemode;
-    private Rank rank;
-    private Tier tier;
-    private Division division;
+    private final RankPackage rankPackage = new RankPackage();
 
     public GameplayInfo(Gamemode g, Rank r, Tier t, Division d) {
         this.gamemode = g;
-        this.rank = r;
-        this.tier = t;
-        this.division = d;
+        this.rankPackage.setInfo(r, t, d);
     }
 
     public GameplayInfo(Gamemode g, int mmr) {
         this.gamemode = g;
         if (!gamemode.equals(Gamemode.CASUAL)) {
             switch (g) {
+                case SOLO:
 
+                    break;
             }
         } else {
-            rank = Rank.CASUAL;
-            tier = Tier.I;
-            division = Division.I;
+            this.rankPackage.setInfo(Rank.CASUAL, Tier.I, Division.I);
         }
     }
 
+
     public Division getDivision() {
-        return division;
+        return rankPackage.getD();
     }
 
     public Rank getRank() {
-        return rank;
+        return rankPackage.getR();
     }
 
     public Gamemode getGamemode() {
@@ -45,13 +42,17 @@ public class GameplayInfo {
     }
 
     public Tier getTier() {
-        return tier;
+        return rankPackage.getT();
+    }
+
+    public RankPackage getRankPackage() {
+        return rankPackage;
     }
 
     /**
      * @return A string containing the rank and division.
      */
     public String getGamemodeAndDivAsString() {
-        return rank.toString() + " " + tier.toString() + " " + division.toString();
+        return rankPackage.toString();
     }
 }
