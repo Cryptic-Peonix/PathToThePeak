@@ -4,4 +4,5 @@ MMR's for each gamemode
 Display Name
 Username (email)
 password (make sure its encrypted)
+Skill Survey shit
 

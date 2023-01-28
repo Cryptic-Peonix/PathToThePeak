@@ -13,8 +13,8 @@ public enum Gamemode {
     RUMBLE,
     DROPSHOT,
     HOOPS,
-    HOCKEY;
-
+    HOCKEY,
+    TOURNAMENT;
 
 
 }

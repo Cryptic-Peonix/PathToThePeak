@@ -7,6 +7,7 @@ package me.skyla.pathpeak.server.objects;
  */
 public enum Rank {
 
+    CASUAL,
     BRONZE,
     SILVER,
     GOLD,
