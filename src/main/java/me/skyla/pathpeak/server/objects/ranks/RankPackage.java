@@ -1,4 +1,4 @@
-package me.skyla.pathpeak.server.objects;
+package me.skyla.pathpeak.server.objects.ranks;
 
 /**
  * A Rank package, holds rank name, tier, and division
@@ -12,7 +12,7 @@ public class RankPackage {
     private Division d;
 
     /**
-     * Constructor
+     * Default Constructor
      */
     public RankPackage() {
         r = Rank.CASUAL;
@@ -20,6 +20,12 @@ public class RankPackage {
         d = Division.I;
     }
 
+    /**
+     * Custom Constructor
+     * @param r Rank
+     * @param t Tier
+     * @param d Division
+     */
     public RankPackage(Rank r, Tier t, Division d) {
         this.r = r;
         this.t = t;
@@ -57,9 +63,9 @@ public class RankPackage {
      * @param division Division (I, II, III, IV)
      */
     public void setInfo(Rank rank, Tier tier, Division division) {
-        this.r = rank;
-        this.t = tier;
-        this.d = division;
+        setR(rank);
+        setT(tier);
+        setD(division);
     }
 
     @Override

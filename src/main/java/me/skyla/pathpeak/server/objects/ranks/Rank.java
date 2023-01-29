@@ -1,4 +1,4 @@
-package me.skyla.pathpeak.server.objects;
+package me.skyla.pathpeak.server.objects.ranks;
 
 /**
  * Enum for in-game ranks
